@@ -20,3 +20,5 @@ int main() {
     cout<<endl;    
 	return 0;
 }
+
+// compile using: g++ -std=c++0x try.cpp -o try
