@@ -1,24 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void word_counter(string str)
+void word_counter(char st[100])
 {
     unordered_map <string, int> mp;
-    string temp;
-    int i=0,k=0;
-    
-    while(str[i]!='\0')
-     {
-        if(str[i]!=' ')
-            temp[k++] = str[i];
-        else
+    int len = strlen(st);
+    for(int i=len-1; i>=0; i--)
+    {
+        if(st[i]==' ')
         {
-            temp[k] = '\0';
-            mp[temp]++;
-            k=0;
-        }
-     }
-     
+            st[i]='\0';
+            mp[&st[i+1]]++;
+        }   
+    }
+    mp[st]++;
     unordered_map<string, int>:: iterator it;
     
     for (it = mp.begin(); it != mp.end(); it++)
@@ -29,15 +24,13 @@ void word_counter(string str)
 }
 
 int main() {
-	// your code goes here
-    
-    string st;
+ 	char st[100];
     
     cout<<"Enter the string: ";
-    cin>>st;
-    
-    cout<<endl;
+    cin.getline(st,100);
+   
     word_counter(st);
-	
+	cout<<endl;
 	return 0;
 }
+// compile in Shell using this command: g++ -std=c++0x word_counter.cpp -o word_counter

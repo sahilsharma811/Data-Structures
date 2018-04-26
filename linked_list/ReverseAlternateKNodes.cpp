@@ -29,7 +29,6 @@ void show(class Node *head)
 		}
 		cout<<"NULL"<<endl;
 	}
-
 class Node *reverse(class Node *head, int k)
 	{
 		class Node *current = head;
@@ -44,7 +43,7 @@ class Node *reverse(class Node *head, int k)
 			current = next;
 			count++;
 		}
-		if(head!=NULL)
+		if(next!=NULL)
 			head->next = current;
 
 		count = 0;
